@@ -9,8 +9,21 @@ package com.libreria.ateneo;
  * @author Near
  */
 public class Libro {
-//<editor-fold defaultstate="collapsed" desc="Atributos">
+    
     private String titulo,autor,isbn;
     private int precio;
-//</editor-fold>
+
+    public Libro() {
+    }
+    
+    
+
+    public Libro(String titulo, String autor, String isbn, int precio) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.isbn = isbn;
+        this.precio = precio;
+    }
+    
+    
 }
