@@ -14,7 +14,7 @@ public class Catalogo {
    private ArrayList<Libro> catalogo;
 
     public Catalogo() {
-        this.catalogo = new ArrayList<>();
+        this.catalogo = new ArrayList<Libro>();
     }
  
     //Agregar libros
@@ -27,18 +27,26 @@ public class Catalogo {
     public void mostrarCatalogo(){
         for (Libro libro : catalogo) {
             libro.mostrarInfo();
+            System.out.println("");
         }
     }
     
-    public void eliminarLibro(String isbn){
-        for (Libro libro : catalogo) {
-            if (libro.getIsbn().equalsIgnoreCase(isbn)) {
-                catalogo.remove(libro);
-                System.out.println("Libro: "+ isbn + " eliminado con exito");
-            }else{
-                System.out.println("Error al eliminar libro");
-            }
-        }
-    }
+   public void eliminarLibro(String isbn){
+       for (Libro libro : catalogo) {
+           if (libro.getIsbn().equalsIgnoreCase(isbn)) {
+               catalogo.remove(libro);
+               break;
+           }
+       }
+   }
+   
+   public void buscarLibroApellido(String apellido){
+       for (Libro libro : catalogo) {
+           if (libro.getAutor().getApellido().equalsIgnoreCase(apellido)) {
+               libro.mostrarInfo();
+               break;
+           }
+       }
+   }
    
 }
